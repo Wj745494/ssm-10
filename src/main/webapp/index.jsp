@@ -58,7 +58,7 @@
                 <span>菜单</span>
             </button>
             <!-- Site name for smallar screens -->
-            <a href="index.html" class="navbar-brand hidden-lg">首页</a>
+            <a href="#" class="navbar-brand hidden-lg">首页</a>
         </div>
 
 
@@ -162,11 +162,14 @@
     <div class="container">
         <div class="row">
 
+
+
+           <%-- 操作界面--%>
             <!-- Logo section -->
             <div class="col-md-4">
                 <!-- Logo. -->
                 <div class="logo">
-                    <h1><a href="#">XXX<span class="bold"></span></a></h1>
+                    <h1><a href="#"><h1>1901</h1><span class="bold"></span></a></h1>
                     <p class="meta">后台管理系统</p>
                 </div>
                 <!-- Logo ends -->
@@ -344,6 +347,11 @@
 
 <!-- Main content starts -->
 
+
+
+
+
+            <%--跳转界面--%>
 <div class="content">
 
     <!-- Sidebar -->
@@ -354,7 +362,7 @@
         <!-- If the main navigation has sub navigation, then add the class "has_sub" to "li" of main navigation. -->
         <ul id="nav">
             <!-- Main menu with font awesome icon -->
-            <li><a href="index.html" class="open"><i class="icon-home"></i> 首页</a>
+            <li><a href="#" class="open"><i class="icon-home"></i> 首页</a>
                 <!-- Sub menu markup
                 <ul>
                   <li><a href="#">Submenu #1</a></li>
@@ -362,24 +370,26 @@
                   <li><a href="#">Submenu #3</a></li>
                 </ul>-->
             </li>
-            <li class="has_sub"><a href="#"><i class="icon-list-alt"></i> 用户管理  <span class="pull-right"><i class="icon-chevron-right"></i></span></a>
+            <li class="has_sub"><a href="#"><i class="icon-list-alt"></i>后台管理<span class="pull-right"><i class="icon-chevron-right"></i></span></a>
                 <ul>
-                    <li><a href="widgets1.html">查看所有用户</a></li>
-                    <li><a href="widgets2.html">权限设置</a></li>
-                    <li><a href="widgets3.html">用户权限</a></li>
+                    <li><a href="">查看一号学弟</a></li>
+                    <li><a href="widgets2.html">查看二号学弟</a></li>
+                    <li><a href="widgets3.html">查看三号学弟</a></li>
+                    <li><a href="${pageContext.request.contextPath}/list.jsp">查看四号学弟</a></li>
                 </ul>
             </li>
-            <li class="has_sub"><a href="#"><i class="icon-file-alt"></i> 待定 <span class="pull-right"><i class="icon-chevron-right"></i></span></a>
+            <li class="has_sub"><a href="#"><i class="icon-file-alt"></i> 前台查看 <span class="pull-right"><i class="icon-chevron-right"></i></span></a>
                 <ul>
-                    <li><a href="post.html">待定</a></li>
-                    <li><a href="login.html">待定</a></li>
-                    <li><a href="register.html">待定</a></li>
-                    <li><a href="support.html">待定</a></li>
-                    <li><a href="invoice.html">待定</a></li>
-                    <li><a href="profile.html">待定</a></li>
-                    <li><a href="gallery.html">待定</a></li>
+                    <li><a href="post.html">查看一号学弟</a></li>
+                    <li><a href="login.html">查看二号学弟</a></li>
+                    <li><a href="register.html">查看三号学弟</a></li>
+                    <li><a href="${pageContext.request.contextPath}/userList?currentPage=1">查看四号学弟</a></li>
                 </ul>
             </li>
+
+
+
+
             <li class="has_sub"><a href="#"><i class="icon-file-alt"></i> 待定 <span class="pull-right"><i class="icon-chevron-right"></i></span></a>
                 <ul>
                     <li><a href="media.html">待定</a></li>
@@ -1135,7 +1145,7 @@
 
     });
 
-    /* Curve chart ends */
+
 </script>
 
 </body>
