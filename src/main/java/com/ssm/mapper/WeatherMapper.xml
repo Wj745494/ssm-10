@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ssm.mapper.WeatherMapper" >
+    <sql id="weatherColumn">
+        wid,date,weather,temperature
+    </sql>
+    <select id="listWeather" resultType="weather" >
+        select <include refid="weatherColumn"/>
+        from weather
+        <where>
+            <if test="search!='' and search!=null" >
+                and wid like #{search}
+            </if>
+        </where>
+        limit #{offset},#{limit}
+    </select>
+
+    <select id="getCount" resultType="long">
+        select count(1) from weather
+        <where>
+            <if test="search!='' and search!=null" >
+                and wid like #{search}
+            </if>
+        </where>
+    </select>
+
+    <update id="updateWeather" parameterType="weather">
+        update weather
+        <set>
+            <if test="date!=null">
+                date=#{date},
+            </if>
+            <if test="weather!=null and weather!=''">
+                weather=#{weather},
+            </if>
+            <if test="temperature!=null and temperature!=''">
+                temperature=#{temperature},
+            </if>
+        </set>
+        where wid=#{wid}
+    </update>
+
+    <insert id="insertWeather"  parameterType="weather">
+        <selectKey keyProperty="wid" keyColumn="wid" resultType="int" order="BEFORE">
+            select max(wid)+1 from weather
+        </selectKey>
+        insert into weather(wid,date,weather,temperature) values (#{wid},#{date},#{weather},#{temperature})
+    </insert>
+
+    <delete id="removeWeather" parameterType="int">
+        delete from weather where wid=#{wid}
+    </delete>
+</mapper>
