@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssm.mapper.AttractionsDao">
+    <select id="listAttractions" resultType="com.ssm.model.Attractions">
+        select * from attractions
+        <where>
+            <if test="search !=null and search != ''" >
+                name like '%${search}%'
+            </if>
+        </where>
+        limit #{offset},#{limit}
+    </select>
+    <select id="countUsers" resultType="_long">
+        select count(1)
+        from attractions
+        <where>
+            <if test="search != null and search != '' ">
+                name like '%${search}%'
+            </if>
+        </where>
+    </select>
+    <insert id="saveAttractions" parameterType="com.ssm.model.Attractions">
+        insert into attractions
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="name !=null ">
+                name,
+            </if>
+            <if test="context !=null ">
+                context,
+            </if>
+            <if test="date !=null ">
+                date,
+            </if>
+        </trim>
+        <trim prefix="values(" suffix=")" suffixOverrides=",">
+            <if test="name !=null">
+                #{name},
+            </if>
+            <if test="context !=null">
+                #{context},
+            </if>
+            <if test="date !=null">
+                #{date}
+            </if>
+        </trim>
+    </insert>
+    <delete id="removeById" parameterType="_int">
+        delete from attractions
+        where aid=#{aid}
+    </delete>
+    <select id="listUserById" parameterType="_int" resultType="com.ssm.model.Attractions">
+        select * from attractions
+        where aid=#{aid}
+    </select>
+    <update id="updateUser" parameterType="com.ssm.model.Attractions">
+        update attractions set
+            name=#{name},
+            context=#{context},
+            date=#{date}
+           where aid = #{aid}
+    </update>
+    <select id="listALL" resultType="com.ssm.model.Attractions">
+        select * from attractions
+
+    </select>
+</mapper>

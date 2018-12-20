@@ -390,9 +390,9 @@
 
 
 
-            <li class="has_sub"><a href="#"><i class="icon-file-alt"></i> 待定 <span class="pull-right"><i class="icon-chevron-right"></i></span></a>
+            <li class="has_sub"><a href="#"><i class="icon-file-alt"></i> 景点管理 <span class="pull-right"><i class="icon-chevron-right"></i></span></a>
                 <ul>
-                    <li><a href="media.html">待定</a></li>
+                    <li><a href="attractions">国内游</a></li>
                     <li><a href="statement.html">待定</a></li>
                     <li><a href="error.html">待定</a></li>
                     <li><a href="error-log.html">待定</a></li>

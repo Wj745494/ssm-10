@@ -1,7 +1,7 @@
 package com.ssm.controller;
 
 import com.alibaba.fastjson.JSONObject;
-import com.ssm.model.Asd;
+
 import com.ssm.model.Weather;
 import com.ssm.model.vo.WeatherVo;
 import com.ssm.service.WeatherService;
