@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssm.mapper.OrdersMapper">
+
+    <!--带条件查询所有订单-->
+    <select id="getListOrders" resultType="orders">
+        select * from orders
+        <where>
+            <if test="search!=null || search!=''">
+                hotel like '%${search}%'
+            </if>
+        </where>
+    </select>
+
+    <!--带条件查询订单的总条数-->
+    <select id="countOrders" resultType="long">
+        select  count(*) from orders
+        <where>
+            <if test="search!=null || search!=''">
+                hotel like '%${search}%'
+            </if>
+        </where>
+
+
+    </select>
+
+   <!-- 根据id进行查询订单-->
+    <select id="getOrdersById" resultType="orders">
+        select * from  orders where id=#{id}
+
+    </select>
+
+
+    <!--删除订单-->
+    <delete id="deleteOrders" parameterType="int">
+        delete from  orders where id=#{id}
+    </delete>
+
+
+    <!--修改订单-->
+    <update id="updateOrders" parameterType="orders">
+        update orders set startime=#{startime},endtime=#{endtime},hotel=#{hotel},paymoney=#{paymoney}
+        where id=#{id}
+    </update>
+
+    <!--增加订单-->
+    <insert id="addOrders" parameterType="orders">
+
+        insert  into  orders(startime,endtime,hotel,paymoney) values (#{startime},#{endtime},#{hotel},#{paymoney})
+
+    </insert>
+
+
+    <!--查询所有-->
+    <select id="queryAllOrders" resultType="orders">
+
+        select  * from  orders
+
+    </select>
+
+</mapper>

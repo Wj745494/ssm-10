@@ -169,6 +169,7 @@
             <div class="col-md-4">
                 <!-- Logo. -->
                 <div class="logo">
+
                     <h1><a href="#"><h1>1901</h1><span class="bold"></span></a></h1>
                     <p class="meta">后台管理系统</p>
                 </div>
@@ -376,6 +377,7 @@
                     <li><a href="widgets2.html">查看二号学弟</a></li>
                     <li><a href="widgets3.html">查看三号学弟</a></li>
                     <li><a href="${pageContext.request.contextPath}/list.jsp">查看四号学弟</a></li>
+                    <li><a href="${pageContext.request.contextPath}/ordersList.jsp">查看五号号学弟</a></li>
                 </ul>
             </li>
             <li class="has_sub"><a href="#"><i class="icon-file-alt"></i> 前台查看 <span class="pull-right"><i class="icon-chevron-right"></i></span></a>
@@ -384,6 +386,7 @@
                     <li><a href="login.html">查看二号学弟</a></li>
                     <li><a href="register.html">查看三号学弟</a></li>
                     <li><a href="${pageContext.request.contextPath}/userList?currentPage=1">查看四号学弟</a></li>
+                    <li><a href="${pageContext.request.contextPath}/orderByPage?currentPage=1">查看五号号学弟</a></li>
                 </ul>
             </li>
 
