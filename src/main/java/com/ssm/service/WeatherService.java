@@ -3,6 +3,8 @@ package com.ssm.service;
 import com.alibaba.fastjson.JSONObject;
 import com.ssm.model.Weather;
 
+import java.util.List;
+
 public interface WeatherService {
     JSONObject listWeather(JSONObject jsonObject);
 
@@ -26,4 +28,10 @@ public interface WeatherService {
      * @return
      */
     int addWeather(Weather weather);
+
+    /**
+     * 查询
+     * @return
+     */
+    List<Weather> viewWeather();
 }

@@ -2,6 +2,7 @@ package com.ssm.mapper;
 
 import com.alibaba.fastjson.JSONObject;
 import com.ssm.model.Weather;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -31,4 +32,10 @@ public interface WeatherMapper {
      * @return
      */
     int insertWeather(Weather weather);
+
+    /**
+     * 查询
+     * @return
+     */
+    List<Weather> viewWeather();
 }

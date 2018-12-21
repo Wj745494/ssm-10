@@ -47,4 +47,9 @@ public class weatherServiceImpl implements WeatherService {
     public int addWeather(Weather weather) {
         return weatherMapper.insertWeather(weather);
     }
+
+    @Override
+    public List<Weather> viewWeather() {
+        return weatherMapper.viewWeather();
+    }
 }

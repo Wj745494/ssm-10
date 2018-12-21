@@ -9,12 +9,14 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.xml.ws.RequestWrapper;
 import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.List;
 
 
 @Controller
@@ -23,18 +25,16 @@ public class WeatherController {
     @Autowired
     private WeatherService weatherService;
 
+    @RequestMapping("toWeather")
+    public String toWeatherInfo(Model model){
+        List<Weather> list = weatherService.viewWeather();
+        model.addAttribute("list",list);
+        return "weatherInfo";
+    }
+
     @ResponseBody
     @RequestMapping(value = "/weather",method = RequestMethod.POST,produces = "application/json;charset=UTF-8")
     public JSONObject viewWeather(@RequestBody JSONObject jsonObject){
-        /*Map<String,Object> map=new HashMap<>();
-        map.put("totel",1);
-        List<Object> list=new ArrayList<>();
-        Map<String,Object> map1=new HashMap<>();
-        map1.put("id",1);
-        map1.put("name","小明");
-        map1.put("price",123);
-        list.add(map1);
-        map.put("rows",list);*/
         jsonObject = weatherService.listWeather(jsonObject);
         return jsonObject;
     }
@@ -56,11 +56,6 @@ public class WeatherController {
         Weather weather = new Weather();
         BeanUtils.copyProperties(weatherVo,weather);
         weather.setDate(weatherVo.getDate());
-        /*Weather weather = new Weather();
-        weather.setWid(wid);
-        weather.setDate(date);
-        weather.setWeather(weather1);
-        weather.setTemperature(temperature);*/
         return weatherService.updateWeather(weather);
     }
 
@@ -70,11 +65,6 @@ public class WeatherController {
         Weather weather = new Weather();
         BeanUtils.copyProperties(weatherVo,weather);
         weather.setDate(weatherVo.getDate());
-        /*Weather weather = new Weather();
-        weather.setWid(wid);
-        weather.setDate(date);
-        weather.setWeather(weather1);
-        weather.setTemperature(temperature);*/
         int i = weatherService.addWeather(weather);
         return i;
     }

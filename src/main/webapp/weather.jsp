@@ -2,16 +2,18 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <!-- bootstrap CSS-->
-    <link rel="stylesheet" type="text/css" href="style/bootstrap.min.css">
+    <!-- Main CSS-->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
     <!-- Font-icon css-->
     <link rel="stylesheet" type="text/css"
           href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.2/bootstrap-table.min.css">
+    <%--表格控件css--%>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.1/bootstrap-table.min.css">
     <%--时间控件css--%>
     <link rel="stylesheet"
           href="https://cdn.bootcss.com/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css">
+
+
 
     <title>天气表</title>
 </head>
@@ -76,15 +78,15 @@
                         </div>
                         <div class="form-group">
                             <label for="date1">时间</label>
-                            <input type="text" class="form-control" id="date1" name="date" placeholder="请输入名称">
+                            <input type="text" class="form-control" id="date1" name="date" placeholder="2012-12-12">
                         </div>
                         <div class="form-group">
                             <label for="weather1">天气</label>
-                            <input type="text" class="form-control" id="weather1"  name="weather" placeholder="请输入名称">
+                            <input type="text" class="form-control" id="weather1"  name="weather" placeholder="请输入">
                         </div>
                         <div class="form-group">
                             <label for="temperature1">温度</label>
-                            <input type="text" class="form-control" id="temperature1"  name="temperature" placeholder="请输入名称">
+                            <input type="text" class="form-control" id="temperature1"  name="temperature" placeholder="请输入">
                         </div>
                         <%--<imput type="submit" class="btn btn-default">提交</imput>--%>
                     </form>
@@ -101,16 +103,16 @@
     <%--jquery库--%>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <%--bootstrap库--%>
-    <script src="js\bootstrap.min.js"></script>
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.2/bootstrap-table.min.js"></script>
-
-    <!-- Latest compiled and minified Locales -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.2/locale/bootstrap-table-zh-CN.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <%--bootstrap-table库--%>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.1/bootstrap-table.min.js"></script>
+    <%--bootstrap-table中文库--%>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.1/locale/bootstrap-table-zh-CN.min.js"></script>
     <%--时间控件js--%>
     <script src="https://cdn.bootcss.com/moment.js/2.18.1/moment-with-locales.min.js"></script>
     <%--时间控件库--%>
     <script src="https://cdn.bootcss.com/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+
 
     <script>
         $(function () {
@@ -140,7 +142,7 @@
                     title: '天气'
                 }, {
                     field: 'temperature',
-                    title: '温度'
+                    title: '温度（℃）'
                 }, {
                     field: 'button',
                     title: '操作',

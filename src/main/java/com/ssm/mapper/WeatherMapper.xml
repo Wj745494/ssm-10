@@ -50,4 +50,9 @@
     <delete id="removeWeather" parameterType="int">
         delete from weather where wid=#{wid}
     </delete>
+
+    <select id="viewWeather" resultType="weather">
+        select <include refid="weatherColumn"/>
+        from weather limit 0,10
+    </select>
 </mapper>

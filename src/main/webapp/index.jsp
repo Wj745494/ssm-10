@@ -373,7 +373,7 @@
             </li>
             <li class="has_sub"><a href="#"><i class="icon-list-alt"></i>后台管理<span class="pull-right"><i class="icon-chevron-right"></i></span></a>
                 <ul>
-                    <li><a href="">查看一号学弟</a></li>
+                    <li><a href="viewWeather">查看一号学弟</a></li>
                     <li><a href="widgets2.html">查看二号学弟</a></li>
                     <li><a href="widgets3.html">查看三号学弟</a></li>
                     <li><a href="${pageContext.request.contextPath}/list.jsp">查看四号学弟</a></li>
